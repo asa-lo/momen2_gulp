@@ -1,0 +1,79 @@
+/*CSS Åsa Lodesjö MIUN 2020*/
+
+body {
+    background-color: #fdfdfd;
+    padding-top: 5%;
+    padding-left: 30%;
+    padding-right: 30%;
+  }
+  
+  /*Headings*/
+  
+  h1, h2 {
+    color: #000000;
+  }
+  
+  h1 {
+    font-size: 2.7vw;
+  }
+  
+  h2 {
+    font-size: 1.7vw;
+  }
+  
+  p {
+    color: #333333;
+    font-size: 1.5vw;
+  }
+  
+  /*Icons*/
+  
+  .material-icons {
+    font-size: 1.5vw;
+  }
+
+  /*Links*/
+  
+  a:link {
+    text-decoration: none;
+    font-weight: 800;
+
+  }
+  
+  a:visited {
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: none;
+  }
+  
+  a:active {
+    text-decoration: none;
+  }
+  
+  /* unvisited link */
+  
+  a:link {
+    color: #333333;
+  }
+
+  /* visited link */
+  
+  a:visited {
+    color: #333333;
+  }
+  
+  /* mouse over link */
+  
+  a:hover {
+    color: #999999;
+  }
+  
+  /* selected link */
+  
+  a:active {
+    color: #333333;
+  }
+  
+  

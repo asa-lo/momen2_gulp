@@ -1,0 +1,25 @@
+/*CSS Åsa Lodesjö MIUN 2020*/
+
+  /*Ipad*/
+  
+  @media only screen and (min-width: 801px) and (max-width: 1200px) {
+    body {
+      padding-top: 5%;
+      padding-left: 15%;
+      padding-right: 15%;
+    }
+    h1 {
+      font-size: 5.5vw;
+    }
+    h2 {
+      font-size: 4.5vw;
+    }
+    p {
+      color: #333333;
+      font-size: 3vw;
+    }
+    .material-icons {
+      font-size: 3vw;
+
+    }
+  }
