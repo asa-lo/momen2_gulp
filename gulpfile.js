@@ -2,6 +2,8 @@ const { src, dest, watch, series, parallel } = require("gulp");
 const concat = require("gulp-concat");
 const minify = require("gulp-minify-css");
 const uglify = require("gulp-uglify-es").default;
+const sass = require("gulp-sass");
+sass.compiler = require("node-sass");
 const browsersync = require("browser-sync").create();
 
 
@@ -9,8 +11,9 @@ const browsersync = require("browser-sync").create();
 const files = {
     htmlPath: "src/**/*.html",
     cssPath: "src/**/*.css",
+    sassPath: "src/**/*.scss",
     jsPath: "src/**/*.js",
-    imgPath: "src/**/*.jpg"
+    imgPath: "src/img/*"
 
 }
 
@@ -28,13 +31,17 @@ function copyImg() {
         );
 }
 
-//Sammanslå och minifiera css-filer
-function cssTask() {
-    return src(files.cssPath)
-        .pipe(concat('styles.css'))
-        .pipe(minify())
-        .pipe(dest('pub/css')
-        );
+
+//Sass
+function sassTask() {
+    return src(files.sassPath)
+        .pipe(sass())
+        .pipe(concat("styles.css"))
+        .pipe(minify({
+            "maxLineLen": 80,
+            "uglyComments": true
+        }))
+        .pipe(dest("pub/css"));
 }
 
 
@@ -55,15 +62,15 @@ function watchTask() {
             baseDir: "pub"
         }
     })
-    watch([files.htmlPath, files.jsPath, files.cssPath, files.imgPath],
-        parallel(copyHTML, cssTask, jsTask, copyImg)).on("change", function () {
+    watch([files.htmlPath, files.jsPath, files.sassPath, files.imgPath],
+        parallel(copyHTML, sassTask, jsTask, copyImg)).on("change", function () {
             browsersync.reload();
         });
 }
 
 //Deafult tasks
 exports.default = series(
-    parallel(copyHTML, jsTask, cssTask, copyImg),
+    parallel(copyHTML, jsTask, sassTask, copyImg),
     watchTask
 );
 

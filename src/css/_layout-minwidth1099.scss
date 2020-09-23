@@ -1,0 +1,187 @@
+/*SCSS for desktop and larger screens*/
+
+@import "./base";
+
+/*Hero-section*/
+@media (min-width: 1099px) {
+
+.hero {
+    height: 100vh !important;
+    width: 100% !important;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: left;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.787), rgba(0, 0, 0, 0.424)), url("../img/bg2.jpg") !important;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.btn {
+    width: 200px;
+    padding: 20px 40px 20px 40px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    background-color: #e0aa83;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    font-weight: bold;
+    &:hover {
+        color: $primaryColorHover;
+    }
+}
+
+.hero-inner {
+    padding-left: 10% !important;
+    padding-right: 30% !important;
+}
+}
+/*Service-section*/
+@media (min-width: 1099px) {
+
+.columnservice {
+    float: left;
+    width: 33.33% !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+.service-area {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+}
+
+/*About-section*/
+@media (min-width: 1099px) {
+
+.columnabout {
+    float: left;
+    width: 50% !important;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+}
+.about-area {
+    background-color: #f7f7f7;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+.img {
+    width: 100%;
+    height: auto;
+}
+}
+
+/*Call-to-action*/
+@media (min-width: 1099px) {
+	.cta {
+		height: 400px;
+		width: 100% !important;
+		display: flex;
+		justify-content: start;
+		align-items: center;
+		text-align: center;
+		background-image: linear-gradient(rgba(12, 0, 0, 0.657), rgba(0, 0, 0, 0.918)), url("../img/about1.jpg") !important;
+		background-size: cover;
+		background-position: center center;
+		background-repeat: no-repeat;
+		.btn {
+			@include btn($circle: false);
+			width: 200px;
+			padding: 20px 40px 20px 40px;
+			color: white;
+			text-decoration: none;
+			font-size: 20px;
+			background-color: #e0aa83;
+			-webkit-transition-duration: 0.4s;
+			transition-duration: 0.4s;
+			font-weight: bold;
+			&:hover {
+				background-color: #e0aa83c4;
+				color: white;
+			}
+		}
+	}
+
+	.cta-inner {
+		padding-left: 20%;
+		padding-right: 20%;
+		padding-top: 5%;
+		padding-bottom: 5%;
+		h2 {
+			color: #fff;
+			font-size: 2.6em;
+			padding-bottom: 10px;
+		}
+		h3 {
+			color: #fff;
+			font-size: 1.5em;
+			padding-bottom: 50px;
+		}
+	}
+}
+
+/*Contact-section*/
+@media (min-width: 1099px) {
+
+.contact-area {
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+	padding-top: 7%;
+	padding-bottom: 7%;
+	text-align: center;
+}
+}
+/*Logos*/
+
+@media only screen and (min-width: 1100px) {
+    #logo-1 {
+        display: block;
+    }
+    #logo {
+        img {
+            width: 210px;
+        }
+    }
+    #logo-2 {
+        display: none;
+    }
+}
+@media only screen and (min-width: 801px) and (max-width: 1099px) {
+    #logo-1 {
+        display: none;
+    }
+    #logo-2 {
+        display: block;
+    }
+    #logo2 {
+        img {
+            width: 170px;
+        }
+    }
+}
+@media only screen and (max-width: 800px) {
+    #logo-1 {
+        display: none;
+    }
+    #logo-2 {
+        display: block;
+    }
+    #logo2 {
+        img {
+            width: 160px;
+        }
+    }
+}
+
