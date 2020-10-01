@@ -5,7 +5,8 @@ const uglify = require("gulp-uglify-es").default;
 const sass = require("gulp-sass");
 sass.compiler = require("node-sass");
 const browsersync = require("browser-sync").create();
-
+const gulp = require('gulp');
+const babel = require('gulp-babel');
 
 //Sökvägar
 const files = {
@@ -48,6 +49,9 @@ function sassTask() {
 //Sammanslå och minifiera JS-filer
 function jsTask() {
     return src(files.jsPath)
+        .pipe(babel({
+            presets: ["@babel/preset-env"]
+        }))
         .pipe(concat('main.js'))
         .pipe(uglify())
         .pipe(dest('pub/js')

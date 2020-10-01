@@ -1,3 +1,10 @@
 // Av Åsa Lodesjö
 
-console.log("Hello from two.js")
+console.log("Hi from testtwo.js");
+
+function multiplier(factor) {
+    return x => x * factor;
+}
+
+let doubler = multiplier(2);
+console.log(doubler(4));
